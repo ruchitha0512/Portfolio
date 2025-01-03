@@ -8,7 +8,7 @@ This portfolio is built using modern web technologies to create a responsive and
 
 ## Live Demo
 
-[View Live Portfolio](https://portfolio-ruchitha0512.vercel.app/)
+[View Live Portfolio](https://portfolio-qe4ack3sr-ruchithas-projects-6ba50681.vercel.app/)
 
 ## Technologies Used
 
