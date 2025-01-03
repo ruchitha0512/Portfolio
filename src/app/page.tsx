@@ -2,7 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { Github, Linkedin, Mail, ExternalLink } from "lucide-react";
 import ScrollProgress from "@/components/ui/scroll-progress";
+import Image from "next/image"; // Add Next.js Image component
 
+// RetroGrid component remains unchanged
 const RetroGrid = () => {
   return (
     <div className="fixed inset-0 z-0">
@@ -59,9 +61,11 @@ const TechStack = () => {
           key={slug}
           className="flex items-center justify-center p-3 md:p-4 bg-[#222222] rounded-lg hover:bg-[#2a2a2a] transition-colors"
         >
-          <img
+          <Image
             src={`https://cdn.simpleicons.org/${slug}`}
             alt={slug}
+            width={32}
+            height={32}
             className="h-6 w-6 md:h-8 md:w-8 opacity-70 hover:opacity-100 transition-opacity"
           />
         </div>
@@ -93,7 +97,6 @@ const Portfolio = () => {
 
   return (
     <div className="relative min-h-screen bg-[#111111] text-white overflow-x-hidden">
-      {/* Background wrapper */}
       <div className="fixed inset-0 bg-[#111111] -z-10" />
 
       <nav className="fixed w-full z-50 bg-[#111111] border-b border-white/5">
@@ -129,7 +132,6 @@ const Portfolio = () => {
         />
       </nav>
 
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center pt-20 overflow-hidden">
         <RetroGrid />
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
@@ -138,7 +140,7 @@ const Portfolio = () => {
               FULL STACK DEVELOPER
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">
-              Hi, I'm Ruchitha. I specialize in creating robust full-stack
+              Hi, I&apos;m Ruchitha. I specialize in creating robust full-stack
               applications that solve real-world problems.
             </h1>
             <div className="text-white/70 text-lg sm:text-xl mb-12">
@@ -157,7 +159,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Technologies */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
@@ -171,7 +172,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Experience */}
       <section id="experience" className="py-16 sm:py-24 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
@@ -193,7 +193,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Projects */}
       <section id="projects" className="py-16 sm:py-24 scroll-mt-20">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
@@ -224,7 +223,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Education */}
       <section className="py-16 sm:py-24">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
@@ -252,7 +250,7 @@ const Portfolio = () => {
                       Bachelor of Technology, ECE
                     </h3>
                     <p className="text-white/70">
-                      Sridevi Women's Engineering College
+                      Sridevi Women&apos;s Engineering College
                     </p>
                   </div>
                   <span className="text-white/50">2021</span>
@@ -263,7 +261,6 @@ const Portfolio = () => {
         </div>
       </section>
 
-      {/* Contact/Footer */}
       <footer
         id="contact"
         className="py-6 sm:py-8 border-t border-white/5 scroll-mt-20"
