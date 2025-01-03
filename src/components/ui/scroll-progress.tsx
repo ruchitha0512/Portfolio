@@ -1,15 +1,19 @@
 "use client";
-
 import { cn } from "@/lib/utils";
 import { motion, useScroll, useSpring } from "motion/react";
 
 interface ScrollProgressProps {
   className?: string;
+  color?: string;
+  backgroundColor?: string;
 }
 
-export default function ScrollProgress({ className }: ScrollProgressProps) {
+export default function ScrollProgress({
+  className,
+  color = "#00C805",
+  backgroundColor = "transparent",
+}: ScrollProgressProps) {
   const { scrollYProgress } = useScroll();
-
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 200,
     damping: 50,
@@ -17,14 +21,25 @@ export default function ScrollProgress({ className }: ScrollProgressProps) {
   });
 
   return (
-    <motion.div
-      className={cn(
-        "fixed inset-x-0 top-0 z-[1000] h-1 origin-left bg-gradient-to-r from-[#00C805] via-[#00C805] to-[#00C805]",
-        className,
-      )}
-      style={{
-        scaleX,
-      }}
-    />
+    <>
+      {/* Background layer */}
+      <div
+        className={cn("fixed inset-x-0 top-0 z-[999] h-1", className)}
+        style={{
+          backgroundColor,
+        }}
+      />
+      {/* Progress layer */}
+      <motion.div
+        className={cn(
+          "fixed inset-x-0 top-0 z-[1000] h-1 origin-left",
+          className,
+        )}
+        style={{
+          scaleX,
+          background: color,
+        }}
+      />
+    </>
   );
 }
